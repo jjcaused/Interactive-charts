@@ -1,0 +1,7 @@
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #242424;
+  color: aliceblue;
+}

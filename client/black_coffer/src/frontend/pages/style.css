@@ -1,0 +1,27 @@
+.testing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: rgb(202, 0, 0);
+  box-sizing: border-box;
+  margin-top: 45px;
+  margin-left: 200px;
+  width: 1000px;
+  height: 650px;
+}
+
+.endyear {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 300px;
+  width: 900px;
+  height: 690px;
+}
+
+.pestle{
+  
+}
