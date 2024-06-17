@@ -17,11 +17,12 @@ mongoose.connect(
   "mongodb+srv://jayanth8088:NvPXNJuYjbwu0f6x@cluster0.ceofnct.mongodb.net/Importing_DB?retryWrites=true&w=majority&appName=Cluster0/"
 );
 
-app.get("/getData", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const users = await usermodel.find({}).limit(100);
     console.log(users);
     res.json(users);
+    res.json("Hello");
   } catch (err) {
     console.error("Error fetching data:", err);
     res.status(500).json({ message: "Internal server error" });
