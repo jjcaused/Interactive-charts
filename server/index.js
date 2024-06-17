@@ -4,7 +4,13 @@ const cors = require("cors");
 const usermodel = require("./models/users");
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [""],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 mongoose.connect(
