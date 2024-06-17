@@ -33,7 +33,7 @@ export const Pestle = () => {
     labels: [],
     datasets: [
       {
-        label: "Intensity by Sector",
+        label: "Relevance Values",
         data: [],
         backgroundColor: ["#000"],
         borderColor: "white",
@@ -73,21 +73,11 @@ export const Pestle = () => {
         labels: labels,
         datasets: [
           {
-            label: "Intensity by Year",
+            label: "Pestle v/s Relevance",
             data: intensities,
-            backgroundColor: [
-              "#56b982",
-              "#be46d7",
-              "#3735d1",
-              "#89e8ef",
-              "#ff4c9e",
-              "#e7b7d1",
-              "#cb0c63",
-              "#e5a624",
-              "#54eb21",
-              "#e94105",
-              "#949de1",
-            ],
+            color: "blue",
+          
+            backgroundColor: ["#be46d7"],
             borderColor: "black",
             borderWidth: 1,
           },
@@ -98,8 +88,8 @@ export const Pestle = () => {
 
   return (
     <div>
-      <Sidenav />
       <div className="pestle">
+        <Sidenav />
         <Radar
           data={chartData}
           options={{
@@ -110,7 +100,7 @@ export const Pestle = () => {
               },
 
               legend: {
-                display: false,
+                display: true,
               },
             },
           }}

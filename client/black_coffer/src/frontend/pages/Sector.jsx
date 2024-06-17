@@ -39,7 +39,7 @@ export const Sector = () => {
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "white",
+        borderColor: "",
         borderWidth: 1,
       },
     ],
@@ -61,16 +61,29 @@ export const Sector = () => {
   useEffect(() => {
     if (data.length > 0) {
       const aggregatedData = data.reduce((acc, curr) => {
-        if (acc[curr.sector]) {
-          acc[curr.sector] += curr.intensity;
-        } else {
-          acc[curr.sector] = curr.intensity;
+        {
+          if (acc[curr.sector]) {
+            acc[curr.sector] += curr.intensity;
+          } else {
+            acc[curr.sector] = curr.intensity;
+          }
         }
         return acc;
       }, {});
 
       const labels = Object.keys(aggregatedData);
       const intensities = Object.values(aggregatedData);
+      
+      const generateRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+  
+      const backgroundColors = labels.map(() => generateRandomColor());
 
       setChartData({
         labels: labels,
@@ -78,19 +91,7 @@ export const Sector = () => {
           {
             label: "Intensities by Sector",
             data: intensities,
-            backgroundColor: [
-              "#56b982",
-              "#be46d7",
-              "#3735d1",
-              "#89e8ef",
-              "#ff4c9e",
-              "#e7b7d1",
-              "#cb0c63",
-              "#e5a624",
-              "#54eb21",
-              "#e94105",
-              "#949de1",
-            ],
+            backgroundColor: backgroundColors,
             borderColor: "black",
           },
         ],
@@ -101,8 +102,8 @@ export const Sector = () => {
   return (
     <>
       <div>
-        <Sidenav />
-        <div className="testing">
+        <div className="sector">
+          <Sidenav />
           <Bar
             data={chartData}
             options={{
@@ -113,7 +114,7 @@ export const Sector = () => {
                 },
 
                 legend: {
-                  display: false,
+                  display: true,
                 },
               },
             }}

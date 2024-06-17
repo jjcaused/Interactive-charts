@@ -68,6 +68,16 @@ export const Endyear = () => {
 
       const labels = Object.keys(aggregatedData);
       const intensities = Object.values(aggregatedData);
+      const generateRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+  
+      const backgroundColors = labels.map(() => generateRandomColor());
 
       setChartData({
         labels: labels,
@@ -75,19 +85,7 @@ export const Endyear = () => {
           {
             label: "Intensity by Year",
             data: intensities,
-            backgroundColor: [
-              "#56b982",
-              "#be46d7",
-              "#3735d1",
-              "#89e8ef",
-              "#ff4c9e",
-              "#e7b7d1",
-              "#cb0c63",
-              "#e5a624",
-              "#54eb21",
-              "#e94105",
-              "#949de1",
-            ],
+            backgroundColor: backgroundColors,
             borderColor: "black",
             borderWidth: 1,
           },
@@ -98,8 +96,8 @@ export const Endyear = () => {
 
   return (
     <div>
-      <Sidenav />
       <div className="endyear">
+        <Sidenav />
         <Line
           data={chartData}
           options={{
@@ -110,7 +108,7 @@ export const Endyear = () => {
               },
 
               legend: {
-                display: false,
+                display: true,
               },
             },
           }}

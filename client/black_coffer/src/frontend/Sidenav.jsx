@@ -351,32 +351,7 @@ export default function Sidenav() {
                   sx={{ color: "blue", opacity: open ? 1 : 0 }}
                 />
               </ListItemButton>
-              <ListItemButton
-                onClick={() => naviagte("/source")}
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <SourceIcon
-                    sx={{
-                      color: "blue",
-                    }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Source"
-                  sx={{ color: "blue", opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
+
               <ListItemButton
                 onClick={() => naviagte("/topics")}
                 sx={{
@@ -405,10 +380,7 @@ export default function Sidenav() {
               </ListItemButton>
             </ListItem>
           </List>
-
-         
         </Drawer>
-      
       </Box>
     </sideNavBar>
   );
