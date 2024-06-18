@@ -22,7 +22,7 @@ app.get("/", async (req, res) => {
     const users = await usermodel.find({}).limit(100);
     console.log(users);
     res.json(users);
-    res.json("Hello");
+   
   } catch (err) {
     console.error("Error fetching data:", err);
     res.status(500).json({ message: "Internal server error" });
