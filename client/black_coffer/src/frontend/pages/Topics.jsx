@@ -6,7 +6,7 @@ import "./style.css";
 
 export const Topics = () => {
   const [data, setData] = useState([]);
-
+  axios.defaults.withCredentials = true;
   const getData = () => {
     axios
       .get("https://interactive-charts.vercel.app/")

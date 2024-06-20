@@ -41,7 +41,7 @@ export const Pestle = () => {
       },
     ],
   });
-
+  axios.defaults.withCredentials = true;
   const getData = () => {
     axios
       .get("https://interactive-charts.vercel.app/")

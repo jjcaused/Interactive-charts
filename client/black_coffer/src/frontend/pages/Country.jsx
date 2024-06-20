@@ -44,6 +44,7 @@ export const Country = () => {
       },
     ],
   });
+  axios.defaults.withCredentials = true;
 
   const getData = () => {
     axios
