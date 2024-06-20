@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://interactive-charts-frontend.vercel.app/"],
+    origin: [""],
     methods: ["POST", "GET"],
     credentials: true,
   })
