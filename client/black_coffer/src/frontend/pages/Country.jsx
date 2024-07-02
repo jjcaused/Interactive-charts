@@ -48,7 +48,7 @@ export const Country = () => {
 
   const getData = () => {
     axios
-      .get("https://interactive-charts.vercel.app/")
+      .get("https://interactive-charts-fja0jfzb3-jjs-projects-e7b1f55a.vercel.app/")
       .then((res) => {
         setData(res.data);
       })
