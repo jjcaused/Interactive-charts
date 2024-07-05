@@ -89,10 +89,6 @@ Navigate through the dashboard to view different charts of the data. You can int
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Contact
 
 For any inquiries or questions, feel free to contact me at [your email address].
