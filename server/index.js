@@ -7,6 +7,7 @@ const app = express();
 app.use(
   cors({
     origin: ["https://interactive-charts-frontend.vercel.app"],
+   
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -15,7 +16,8 @@ app.use(express.json());
 
 mongoose.connect(
   "mongodb+srv://jayanth8088:NvPXNJuYjbwu0f6x@cluster0.ceofnct.mongodb.net/Importing_DB?retryWrites=true&w=majority&appName=Cluster0/",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  
 );
 
 app.get("/", async (req, res) => {
